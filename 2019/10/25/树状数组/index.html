@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>test | 冲刺四级</title>
+  <title>树状数组 | 冲刺四级</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="永远都不要忘记我们为何而战">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="1.什么是树状数组?顾名思义，就是用数组来模拟树形结构呗。那么衍生出一个问题，为什么不直接建树？答案是没必要，因为树状数组能处理的问题就没必要建树。和Trie树的构造方式有类似之处。">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;21&#x2F;proverb&#x2F;index.html">
+<meta property="og:title" content="树状数组">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;25&#x2F;%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84&#x2F;index.html">
 <meta property="og:site_name" content="冲刺四级">
-<meta property="og:description" content="永远都不要忘记我们为何而战">
+<meta property="og:description" content="1.什么是树状数组?顾名思义，就是用数组来模拟树形结构呗。那么衍生出一个问题，为什么不直接建树？答案是没必要，因为树状数组能处理的问题就没必要建树。和Trie树的构造方式有类似之处。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-10-23T09:17:46.450Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1448672&#x2F;201810&#x2F;1448672-20181003121208845-81274925.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1448672&#x2F;201810&#x2F;1448672-20181003121604644-268531484.png">
+<meta property="og:updated_time" content="2019-10-25T13:25:45.739Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;1448672&#x2F;201810&#x2F;1448672-20181003121208845-81274925.png">
   
     <link rel="alternative" href="/atom.xml" title="冲刺四级" type="application/atom+xml">
   
@@ -153,30 +156,111 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-proverb" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-树状数组" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      树状数组
     </h1>
   
 
         
-        <a href="/2019/10/21/proverb/" class="archive-article-date">
-  	<time datetime="2019-10-21T12:02:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-21</time>
+        <a href="/2019/10/25/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="archive-article-date">
+  	<time datetime="2019-10-25T12:38:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong><p style="font-size: 24px">永远都不要忘记我们为何而战<p></strong></p>
+        <p><strong><p style = "font-size: 17px"> <p></strong></p>
+<blockquote>
+<h3 id="1-什么是树状数组"><a href="#1-什么是树状数组" class="headerlink" title="1.什么是树状数组?"></a>1.什么是树状数组?</h3><p><strong><P style = "font-size: 17px;">顾名思义，就是用数组来模拟树形结构呗。那么衍生出一个问题，为什么不直接建树？答案是没必要，因为树状数组能处理的问题就没必要建树。和Trie树的构造方式有类似之处。<p></strong></p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<h3 id="2-树状数组可以解决那一部分问题？"><a href="#2-树状数组可以解决那一部分问题？" class="headerlink" title="2.树状数组可以解决那一部分问题？"></a>2.树状数组可以解决那一部分问题？</h3><p><strong><p style = "font-size: 17px">可以解决大部分区间上的更新以及求和问题<p></strong></p>
+</blockquote>
+<blockquote>
+<h3 id="3-树状数组和线段树的区别在哪里"><a href="#3-树状数组和线段树的区别在哪里" class="headerlink" title="3.树状数组和线段树的区别在哪里?"></a>3.树状数组和线段树的区别在哪里?</h3><p><strong><p style = "font-size: 17px">树状数组可以解决的问题都可以用线段树解决，这两者的区别在哪里呢？树状数组的系数要少很多，就比如字符串模拟大数可以解决大数问题，也可以解决1+1的问题，但没人会在1+1的问题上用大数模拟。<p></strong></p>
+</blockquote>
+<blockquote>
+<h3 id="4-树状数组的优缺点？"><a href="#4-树状数组的优缺点？" class="headerlink" title="4.树状数组的优缺点？"></a>4.树状数组的优缺点？</h3><p><strong><P style = "font-size: 17px">修改和查询的复杂度都是O(logN)，而且相比线段树系数要少很多，比传统数组要快，而且容易写。<br>缺点是遇到复杂的区间问题，树状数组的功能还是很有限的<p></strong></p>
+</blockquote>
+<h2 id="一、树状数组的介绍"><a href="#一、树状数组的介绍" class="headerlink" title="一、树状数组的介绍"></a>一、树状数组的介绍</h2><p><strong><p style = "font-size: 17px">二叉树大家一定都知道，如下图<p></strong><br><img src="https://img2018.cnblogs.com/blog/1448672/201810/1448672-20181003121208845-81274925.png" alt=""><br><strong><p style = "font-size: 17px">如果每个父亲都存的是两个儿子的值，是不是就可以解决这类区间问题了呢。是的没错，但是这样的树形结构，叫做线段树。<br>那真的的树形结构是怎样的，和上图类似，但省去了一些节点，以达到用数组建树.<p></strong><br><img src="https://img2018.cnblogs.com/blog/1448672/201810/1448672-20181003121604644-268531484.png" alt=""></p>
+<p style = "font-size: 17px">黑色数组代表原来的数组（下面用A[i]代替），红色结构代表我们的树状数组(下面用C[i]代替)，发现没有，每个位置只有一个方框，令每个位置存的就是子节点的值的和，则有
 
+<p style = "margin-left: 50px;">● C[1] = A[1];<p>
+<p style = "margin-left: 50px;">● C[2] = A[1] + A[2];<p>
+<p style = "margin-left: 50px;">● C[3] = A[3];<p>
+<p style = "margin-left: 50px;">● C[4] = A[1] + A[2] + A[3] + A[4];<p>
+<p style = "margin-left: 50px;">● C[5] = A[5];<p>
+<p style = "margin-left: 50px;">● C[6] = A[5] + A[6];<p>
+<p style = "margin-left: 50px;">● C[7] = A[7];<p>
+<p style = "margin-left: 50px;">● C[8] = A[1] + A[2] + A[3] + A[4] + A[5] + A[6] + A[7] + A[8];<p>
+
+<p>可以发现，这颗树是有规律的</p>
+<p>C[i] = A[i - 2k+1] + A[i - 2k+2] + … + A[i];   //k为i的二进制中从最低位到高位连续零的长度</p>
+<p>例如i = 8(1000)时候，k = 3，可自行验证。</p>
+<p>这个怎么实现求和呢，比如我们要找前7项和，那么应该是SUM = C[7] + C[6] + C[4];</p>
+<p>而根据上面的式子，容易的出SUMi = C[i] + C[i-2k1] + C[(i - 2k1) - 2k2] + …..；</p>
+<p>其实树状数组就是一个二进制上面的应用。</p>
+<p>现在新的问题来了2^k该怎么求呢，不难得出2^k = i&amp;(i^(i-1));但这个还是不好求出呀，前辈的智慧就出来了，2^k = i&amp;(-i);</p>
+<p>为什么呢？</p>
+<p style = "color:#008080">
+这里利用的负数的存储特性，负数是以补码存储的，对于整数运算 x&(-x)有
+<p style = "margin-left: 50px;color:#008080">● 当x为0时，即 0 & 0，结果为0；<p>
+<p style = "margin-left: 50px;color:#008080">●当x为奇数时，最后一个比特位为1，取反加1没有进位，故x和-x除最后一位外前面的位正好相反，按位与结果为0。结果为1。<p>
+<p style = "margin-left: 50px;color:#008080"> ●当x为偶数，且为2的m次方时，x的二进制表示中只有一位是1（从右往左的第m+1位），其右边有m位0，故x取反加1后，从右到左第有m个0，第m+1位及其左边全是1。这样，x& (-x) 得到的就是x。 <p>
+<p style = "margin-left: 50px;color:#008080"> ●当x为偶数，却不为2的m次方的形式时，可以写作x= y * (2^k)。 其中，y的最低位为1。实际上就是把x用一个奇数左移k位来表示。这时，x的二进制表示最右边有k个0，从右往左第k+1位为1。当对x取反时，最右边的k位0变成1，第k+1位变为0；再加1，最右边的k位就又变成了0，第k+1位因为进位的关系变成了1。左边的位因为没有进位，正好和x原来对应的位上的值相反。二者按位与，得到：第k+1位上为1，左边右边都为0。结果为2^k。<p>
+<p style = "margin-left: 50px;color:#008080">总结一下：x&(-x)，当x为0时结果为0；x为奇数时，结果为1；x为偶数时，结果为x中2的最大次方的因子。
+
+<p>而且这个有一个专门的称呼，叫做lowbit，即取2^k。<p></p>
+<h2 id="二、如何建立树状数组"><a href="#二、如何建立树状数组" class="headerlink" title="二、如何建立树状数组"></a>二、如何建立树状数组</h2><p><strong><p style = "font-size: 17px">上面已经解释了如何用树状数组求区间和，那么如果我们要更新某一个点的值呢，还是一样的，上面说了C[i] = A[i - 2k+1] + A[i - 2k+2] + … + A[i]，那么如果我们更新某个A[i]的值，则会影响到所有包含有A[i]位置。如果求A[i]包含哪些位置里呢，同理有A[i] 包含于 C[i + 2k]、C[(i + 2k) + 2k]…；<p></strong></p>
+<p><strong><p style = "font-size: 17px">好，现在已经搞清楚了更新和求和，就可以来建树状数组了。如果上面的求和、更新或者lowbit步骤还没搞懂的化，建议再思考弄懂再往下看。<br>那么构造一个树状数组则为<p></strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">int n;</span><br><span class="line">int a[1005],c[1005]; //对应原数组和树状数组</span><br><span class="line"></span><br><span class="line">int lowbit(int x)&#123;</span><br><span class="line">    return x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void updata(int i,int k)&#123;    //在i位置加上k</span><br><span class="line">    while(i &lt;= n)&#123;</span><br><span class="line">        c[i] += k;</span><br><span class="line">        i += lowbit(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int getsum(int i)&#123;        //求A[1 - i]的和</span><br><span class="line">    int res = 0;</span><br><span class="line">    while(i &gt; 0)&#123;</span><br><span class="line">        res += c[i];</span><br><span class="line">        i -= lowbit(i);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><p style = "font-size: 17px">这样就构造了一个树状数组。<p></strong></p>
+<h2 id="三、树状数组的一种变式"><a href="#三、树状数组的一种变式" class="headerlink" title="三、树状数组的一种变式"></a>三、树状数组的一种变式</h2><blockquote>
+<h3 id="区间更新，单点查询"><a href="#区间更新，单点查询" class="headerlink" title="区间更新，单点查询"></a>区间更新，单点查询</h3></blockquote>
+<h4 id="如果题目是让你把x-y区间内的所有值全部加上k或者减去k，然后查询操作是问某个点的值，这种时候该怎么做呢。如果是像上面的树状数组来说，就必须把x-y区间内每个值都更新，这样的复杂度肯定是不行的，这个时候，就不能再用数据的值建树了，这里我们引入差分，利用差分建树。"><a href="#如果题目是让你把x-y区间内的所有值全部加上k或者减去k，然后查询操作是问某个点的值，这种时候该怎么做呢。如果是像上面的树状数组来说，就必须把x-y区间内每个值都更新，这样的复杂度肯定是不行的，这个时候，就不能再用数据的值建树了，这里我们引入差分，利用差分建树。" class="headerlink" title="如果题目是让你把x-y区间内的所有值全部加上k或者减去k，然后查询操作是问某个点的值，这种时候该怎么做呢。如果是像上面的树状数组来说，就必须把x-y区间内每个值都更新，这样的复杂度肯定是不行的，这个时候，就不能再用数据的值建树了，这里我们引入差分，利用差分建树。"></a>如果题目是让你把x-y区间内的所有值全部加上k或者减去k，然后查询操作是问某个点的值，这种时候该怎么做呢。如果是像上面的树状数组来说，就必须把x-y区间内每个值都更新，这样的复杂度肯定是不行的，这个时候，就不能再用数据的值建树了，这里我们引入差分，利用差分建树。</h4><h4 id="假设我们规定A-0-0"><a href="#假设我们规定A-0-0" class="headerlink" title="假设我们规定A[0] = 0;"></a>假设我们规定A[0] = 0;</h4><h4 id="则有-A-i-Σij-1D-j-D-j-A-j-A-j-1-，即前面i项的差值和，这个有什么用呢？例如对于下面这个数组"><a href="#则有-A-i-Σij-1D-j-D-j-A-j-A-j-1-，即前面i项的差值和，这个有什么用呢？例如对于下面这个数组" class="headerlink" title="则有 A[i] = Σij = 1D[j];(D[j] = A[j] - A[j-1])，即前面i项的差值和，这个有什么用呢？例如对于下面这个数组"></a>则有 A[i] = Σij = 1D[j];(D[j] = A[j] - A[j-1])，即前面i项的差值和，这个有什么用呢？例如对于下面这个数组</h4><pre><code>A[] = 1 2 3 5 6 9
+D[] = 1 1 1 2 1 3</code></pre><h4 id="如果我们把-2-5-区间内值加上2，则变成了"><a href="#如果我们把-2-5-区间内值加上2，则变成了" class="headerlink" title="如果我们把[2,5]区间内值加上2，则变成了"></a>如果我们把[2,5]区间内值加上2，则变成了</h4><pre><code>A[] = 1 4 5 7 8 9
+D[] = 1 3 1 2 1 1</code></pre><h4 id="发现了没有，当某个区间-x-y-值改变了，区间内的差值是不变的，只有D-x-和D-y-1-的值发生改变，至于为什么我想我就不用解释了吧。"><a href="#发现了没有，当某个区间-x-y-值改变了，区间内的差值是不变的，只有D-x-和D-y-1-的值发生改变，至于为什么我想我就不用解释了吧。" class="headerlink" title="发现了没有，当某个区间[x,y]值改变了，区间内的差值是不变的，只有D[x]和D[y+1]的值发生改变，至于为什么我想我就不用解释了吧。"></a>发现了没有，当某个区间[x,y]值改变了，区间内的差值是不变的，只有D[x]和D[y+1]的值发生改变，至于为什么我想我就不用解释了吧。</h4><h4 id="所以我们就可以利用这个性质对D-数组建立树状数组，代码为："><a href="#所以我们就可以利用这个性质对D-数组建立树状数组，代码为：" class="headerlink" title="所以我们就可以利用这个性质对D[]数组建立树状数组，代码为："></a>所以我们就可以利用这个性质对D[]数组建立树状数组，代码为：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">int n,m;</span><br><span class="line">int a[50005] = &#123;0&#125;,c[50005]; //对应原数组和树状数组</span><br><span class="line"></span><br><span class="line">int lowbit(int x)&#123;</span><br><span class="line">    return x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void updata(int i,int k)&#123;    //在i位置加上k</span><br><span class="line">    while(i &lt;= n)&#123;</span><br><span class="line">        c[i] += k;</span><br><span class="line">        i += lowbit(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int getsum(int i)&#123;        //求D[1 - i]的和，即A[i]值</span><br><span class="line">    int res = 0;</span><br><span class="line">    while(i &gt; 0)&#123;</span><br><span class="line">        res += c[i];</span><br><span class="line">        i -= lowbit(i);</span><br><span class="line">    &#125;</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    cin&gt;&gt;n;27     for(int i = 1; i &lt;= n; i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        updata(i,a[i] - a[i-1]);   //输入初值的时候，也相当于更新了值</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    //[x,y]区间内加上k</span><br><span class="line">    updata(x,k);    //A[x] - A[x-1]增加k</span><br><span class="line">    updata(y+1,-k);        //A[y+1] - A[y]减少k</span><br><span class="line">    </span><br><span class="line">    //查询i位置的值</span><br><span class="line">    int sum = getsum(i);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -187,7 +271,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -243,7 +327,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/21/proverb/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/25/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -257,15 +341,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/21/summer/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          summer
-        
-      </div>
-    </a>
   
+    <a href="/2019/10/21/summer/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">summer</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -282,6 +362,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-什么是树状数组"><span class="toc-number">1.</span> <span class="toc-text">1.什么是树状数组?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-树状数组可以解决那一部分问题？"><span class="toc-number">2.</span> <span class="toc-text">2.树状数组可以解决那一部分问题？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-树状数组和线段树的区别在哪里"><span class="toc-number">3.</span> <span class="toc-text">3.树状数组和线段树的区别在哪里?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-树状数组的优缺点？"><span class="toc-number">4.</span> <span class="toc-text">4.树状数组的优缺点？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、树状数组的介绍"><span class="toc-number"></span> <span class="toc-text">一、树状数组的介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、如何建立树状数组"><span class="toc-number"></span> <span class="toc-text">二、如何建立树状数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、树状数组的一种变式"><span class="toc-number"></span> <span class="toc-text">三、树状数组的一种变式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#区间更新，单点查询"><span class="toc-number">1.</span> <span class="toc-text">区间更新，单点查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如果题目是让你把x-y区间内的所有值全部加上k或者减去k，然后查询操作是问某个点的值，这种时候该怎么做呢。如果是像上面的树状数组来说，就必须把x-y区间内每个值都更新，这样的复杂度肯定是不行的，这个时候，就不能再用数据的值建树了，这里我们引入差分，利用差分建树。"><span class="toc-number">1.1.</span> <span class="toc-text">如果题目是让你把x-y区间内的所有值全部加上k或者减去k，然后查询操作是问某个点的值，这种时候该怎么做呢。如果是像上面的树状数组来说，就必须把x-y区间内每个值都更新，这样的复杂度肯定是不行的，这个时候，就不能再用数据的值建树了，这里我们引入差分，利用差分建树。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#假设我们规定A-0-0"><span class="toc-number">1.2.</span> <span class="toc-text">假设我们规定A[0] = 0;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#则有-A-i-Σij-1D-j-D-j-A-j-A-j-1-，即前面i项的差值和，这个有什么用呢？例如对于下面这个数组"><span class="toc-number">1.3.</span> <span class="toc-text">则有 A[i] = Σij = 1D[j];(D[j] = A[j] - A[j-1])，即前面i项的差值和，这个有什么用呢？例如对于下面这个数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如果我们把-2-5-区间内值加上2，则变成了"><span class="toc-number">1.4.</span> <span class="toc-text">如果我们把[2,5]区间内值加上2，则变成了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发现了没有，当某个区间-x-y-值改变了，区间内的差值是不变的，只有D-x-和D-y-1-的值发生改变，至于为什么我想我就不用解释了吧。"><span class="toc-number">1.5.</span> <span class="toc-text">发现了没有，当某个区间[x,y]值改变了，区间内的差值是不变的，只有D[x]和D[y+1]的值发生改变，至于为什么我想我就不用解释了吧。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#所以我们就可以利用这个性质对D-数组建立树状数组，代码为："><span class="toc-number">1.6.</span> <span class="toc-text">所以我们就可以利用这个性质对D[]数组建立树状数组，代码为：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
