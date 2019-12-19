@@ -6,13 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 算法 | 冲刺四级</title>
+  <title>java多线程 | 冲刺四级</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="冲刺四级">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;tags&#x2F;%E7%AE%97%E6%B3%95&#x2F;index.html">
+  <meta name="description" content="####线程（Thread）是一份独立运行的程序，有自己专用的运行栈。线程有可能和其他线程共享一些资源，比如，内存，文件，数据库等。####当多个线程同时读写同一份共享资源的时候，可能会引起冲突。这时候，我们需要引入线程“同步”机制，即各位线程之间要有个先来后到，不能一窝蜂挤上去抢作一团。####同步这个词是从英文synchronize（使同时发生）翻译过来的。我也不明白为什么要用这个很容易引起误">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java多线程">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;19&#x2F;java%E5%A4%9A%E7%BA%BF%E7%A8%8B&#x2F;index.html">
 <meta property="og:site_name" content="冲刺四级">
+<meta property="og:description" content="####线程（Thread）是一份独立运行的程序，有自己专用的运行栈。线程有可能和其他线程共享一些资源，比如，内存，文件，数据库等。####当多个线程同时读写同一份共享资源的时候，可能会引起冲突。这时候，我们需要引入线程“同步”机制，即各位线程之间要有个先来后到，不能一窝蜂挤上去抢作一团。####同步这个词是从英文synchronize（使同时发生）翻译过来的。我也不明白为什么要用这个很容易引起误">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-19T12:00:44.526Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="冲刺四级" type="application/atom+xml">
@@ -149,60 +152,154 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-java多线程" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/25/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="archive-article-date">
-  	<time datetime="2019-10-25T12:38:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/25/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">树状数组</a>
+    <h1 class="article-title" itemprop="name">
+      java多线程
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/2019/12/19/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2019-12-19T11:45:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####线程（Thread）是一份独立运行的程序，有自己专用的运行栈。线程有可能和其他线程共享一些资源，比如，内存，文件，数据库等。<br>####当多个线程同时读写同一份共享资源的时候，可能会引起冲突。这时候，我们需要引入线程“同步”机制，即各位线程之间要有个先来后到，不能一窝蜂挤上去抢作一团。<br>####同步这个词是从英文synchronize（使同时发生）翻译过来的。我也不明白为什么要用这个很容易引起误解的词。既然大家都这么用，咱们也就只好这么将就。<br>####线程同步的真实意思和字面意思恰好相反。线程同步的真实意思，其实是“排队”：几个线程之间要排队，一个一个对共享资源进行操作，而不是同时进行操作。</p>
+<p>####因此，关于线程同步，需要牢牢记住的第一点是：线程同步就是线程排队。同步就是排队。线程同步的目的就是避免线程“同步”执行。这可真是个无聊的绕口令。<br>####关于线程同步，需要牢牢记住的第二点是 “共享”这两个字。只有共享资源的读写访问才需要同步。如果不是共享资源，那么就根本没有同步的必要。<br>####关于线程同步，需要牢牢记住的第三点是，只有“变量”才需要同步访问。如果共享的资源是固定不变的，那么就相当于“常量”，线程同时读取常量也不需要同步。至少一个线程修改共享资源，这样的情况下，线程之间就需要同步。<br>####关于线程同步，需要牢牢记住的第四点是：多个线程访问共享资源的代码有可能是同一份代码，也有可能是不同的代码；无论是否执行同一份代码，只要这些线程的代码访问同一份可变的共享资源，这些线程之间就需要同步。<br>####为了加深理解，下面举几个例子。<br>####有两个采购员，他们的工作内容是相同的，都是遵循如下的步骤：<br>####（1）到市场上去，寻找并购买有潜力的样品。<br>####（2）回到公司，写报告。<br>####这两个人的工作内容虽然一样，他们都需要购买样品，他们可能买到同样种类的样品，但是他们绝对不会购买到同一件样品，他们之间没有任何共享资源。所以，他们可以各自进行自己的工作，互不干扰。<br>####这两个采购员就相当于两个线程；两个采购员遵循相同的工作步骤，相当于这两个线程执行同一段代码。</p>
+<p>####下面给这两个采购员增加一个工作步骤。采购员需要根据公司的“布告栏”上面公布的信息，安排自己的工作计划。<br>####这两个采购员有可能同时走到布告栏的前面，同时观看布告栏上的信息。这一点问题都没有。因为布告栏是只读的，这两个采购员谁都不会去修改布告栏上写的信息。</p>
+<p>####下面增加一个角色。一个办公室行政人员这个时候，也走到了布告栏前面，准备修改布告栏上的信息。<br>####如果行政人员先到达布告栏，并且正在修改布告栏的内容。两个采购员这个时候，恰好也到了。这两个采购员就必须等待行政人员完成修改之后，才能观看修改后的信息。<br>####如果行政人员到达的时候，两个采购员已经在观看布告栏了。那么行政人员需要等待两个采购员把当前信息记录下来之后，才能够写上新的信息。<br>####上述这两种情况，行政人员和采购员对布告栏的访问就需要进行同步。因为其中一个线程（行政人员）修改了共享资源（布告栏）。而且我们可以看到，行政人员的工作流程和采购员的工作流程（执行代码）完全不同，但是由于他们访问了同一份可变共享资源（布告栏），所以他们之间需要同步<br>###同步锁</p>
+<p>####前面讲了为什么要线程同步，下面我们就来看如何才能线程同步。<br>####线程同步的基本实现思路还是比较容易理解的。我们可以给共享资源加一把锁，这把锁只有####一把钥匙。哪个线程获取了这把钥匙，才有权利访问该共享资源。<br>####生活中，我们也可能会遇到这样的例子。一些超市的外面提供了一些自动储物箱。每个储物箱都有一把锁，一把钥匙。人们可以使用那些带有钥匙的储物箱，把东西放到储物箱里面，把储物箱锁上，然后把钥匙拿走。这样，该储物箱就被锁住了，其他人不能再访问这个储物箱。（当然，真实的储物箱钥匙是可以被人拿走复制的，所以不要把贵重物品放在超市的储物箱里面。于是很多超市都采用了电子密码锁。）<br>####线程同步锁这个模型看起来很直观。但是，还有一个严峻的问题没有解决，这个同步锁应该加在哪里？<br>####当然是加在共享资源上了。反应快的读者一定会抢先回答。<br>####没错，如果可能，我们当然尽量把同步锁加在共享资源上。一些比较完善的共享资源，比如，文件系统，数据库系统等，自身都提供了比较完善的同步锁机制。我们不用另外给这些资源加锁，这些资源自己就有锁。<br>####但是，大部分情况下，我们在代码中访问的共享资源都是比较简单的共享对象。这些对象里面没有地方让我们加锁。<br>####读者可能会提出建议：为什么不在每一个对象内部都增加一个新的区域，专门用来加锁呢？这种设计理论上当然也是可行的。问题在于，线程同步的情况并不是很普遍。如果因为这小概率事件，在所有对象内部都开辟一块锁空间，将会带来极大的空间浪费。得不偿失。<br>####于是，现代的编程语言的设计思路都是把同步锁加在代码段上。确切的说，是把同步锁加在“访问共享资源的代码段”上。这一点一定要记住，同步锁是加在代码段上的。<br>####同步锁加在代码段上，就很好地解决了上述的空间浪费问题。但是却增加了模型的复杂度，也增加了我们的理解难度。<br>####现在我们就来仔细分析“同步锁加在代码段上”的线程同步模型。<br>####首先，我们已经解决了同步锁加在哪里的问题。我们已经确定，同步锁不是加在共享资源上，而是加在访问共享资源的代码段上。<br>####其次，我们要解决的问题是，我们应该在代码段上加什么样的锁。这个问题是重点中的重点。这是我们尤其要注意的问题：访问同一份共享资源的不同代码段，应该加上同一个同步锁；如果加的是不同的同步锁，那么根本就起不到同步的作用，没有任何意义。<br>####这就是说，同步锁本身也一定是多个线程之间的共享对象。<br>####Java语言的synchronized关键字</p>
+<p>####为了加深理解，举几个代码段同步的例子。<br>####不同语言的同步锁模型都是一样的。只是表达方式有些不同。这里我们以当前最流行的Java语言为例。Java语言里面用synchronized关键字给代码段加锁。整个语法形式表现为 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">synchronized(同步锁) &#123; </span><br><span class="line">// 访问共享资源，需要同步的代码段 </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">这里尤其要注意的就是，同步锁本身一定要是共享的对象。</span><br><span class="line"></span><br><span class="line">… f1() &#123;</span><br><span class="line"></span><br><span class="line">Object lock1 = new Object(); // 产生一个同步锁</span><br><span class="line"></span><br><span class="line">synchronized(lock1)&#123; </span><br><span class="line">// 代码段 A </span><br><span class="line">// 访问共享资源 resource1 </span><br><span class="line">// 需要同步 </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####上面这段代码没有任何意义。因为那个同步锁是在函数体内部产生的。每个线程调用这段代码的时候，都会产生一个新的同步锁。那么多个线程之间，使用的是不同的同步锁。根本达不到同步的目的。<br>####同步代码一定要写成如下的形式，才有意义。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public static final Object lock1 = new Object();</span><br><span class="line"></span><br><span class="line">… f1() &#123;</span><br><span class="line"></span><br><span class="line">synchronized(lock1)&#123; // lock1 是公用同步锁 </span><br><span class="line">// 代码段 A </span><br><span class="line">// 访问共享资源 resource1 </span><br><span class="line">// 需要同步 </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####你不一定要把同步锁声明为static或者public，但是你一定要保证相关的同步代码之间，一定要使用同一个同步锁。<br>####讲到这里，你一定会好奇，这个同步锁到底是个什么东西。为什么随便声明一个Object对象，就可以作为同步锁？<br>####在Java里面，同步锁的概念就是这样的。任何一个Object Reference都可以作为同步锁。我们可以把Object Reference理解为对象在内存分配系统中的内存地址。因此，要保证同步代码段之间使用的是同一个同步锁，我们就要保证这些同步代码段的synchronized关键字使用的是同一个Object Reference，同一个内存地址。这也是为什么我在前面的代码中声明lock1的时候，使用了final关键字，这就是为了保证lock1的Object Reference在整个系统运行过程中都保持不变。<br>####一些求知欲强的读者可能想要继续深入了解synchronzied(同步锁)的实际运行机制。Java虚拟机规范中（你可以在google用“JVM Spec”等关键字进行搜索），有对synchronized关键字的详细解释。synchronized会编译成 monitor enter, … monitor exit之类的指令对。Monitor就是实际上的同步锁。每一个Object Reference在概念上都对应一个monitor。<br>####这些实现细节问题，并不是理解同步锁模型的关键。我们继续看几个例子，加深对同步锁模型的理解。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">public static final Object lock1 = new Object();</span><br><span class="line"></span><br><span class="line">… f1() &#123;</span><br><span class="line"></span><br><span class="line">synchronized(lock1)&#123; // lock1 是公用同步锁 </span><br><span class="line">// 代码段 A </span><br><span class="line">// 访问共享资源 resource1 </span><br><span class="line">// 需要同步 </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">… f2() &#123;</span><br><span class="line"></span><br><span class="line">synchronized(lock1)&#123; // lock1 是公用同步锁 </span><br><span class="line">// 代码段 B </span><br><span class="line">// 访问共享资源 resource1 </span><br><span class="line">// 需要同步 </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####上述的代码中，代码段A和代码段B就是同步的。因为它们使用的是同一个同步锁lock1。<br>####如果有10个线程同时执行代码段A，同时还有20个线程同时执行代码段B，那么这30个线程之间都是要进行同步的。<br>####这30个线程都要竞争一个同步锁lock1。同一时刻，只有一个线程能够获得lock1的所有权，只有一个线程可以执行代码段A或者代码段B。其他竞争失败的线程只能暂停运行，进入到该同步锁的就绪（Ready）队列。<br>####每一个同步锁下面都挂了几个线程队列，包括就绪（Ready）队列，待召（Waiting）队列等。比如，lock1对应的就绪队列就可以叫做lock1 - ready queue。每个队列里面都可能有多个暂停运行的线程。<br>####注意，竞争同步锁失败的线程进入的是该同步锁的就绪（Ready）队列，而不是后面要讲述的待召队列（Waiting Queue，也可以翻译为等待队列）。就绪队列里面的线程总是时刻准备着竞争同步锁，时刻准备着运行。而待召队列里面的线程则只能一直等待，直到等到某个信号的通知之后，才能够转移到就绪队列中，准备运行。<br>####成功获取同步锁的线程，执行完同步代码段之后，会释放同步锁。该同步锁的就绪队列中的其他线程就继续下一轮同步锁的竞争。成功者就可以继续运行，失败者还是要乖乖地待在就绪队列中。 </p>
+<p>###信号量</p>
+<p>####同步锁模型只是最简单的同步模型。同一时刻，只有一个线程能够运行同步代码。<br>####有的时候，我们希望处理更加复杂的同步模型，比如生产者/消费者模型、读写同步模型等。这种情况下，同步锁模型就不够用了。我们需要一个新的模型。这就是我们要讲述的信号量模型。<br>####信号量模型的工作方式如下：线程在运行的过程中，可以主动停下来，等待某个信号量的通知；这时候，该线程就进入到该信号量的待召（Waiting）队列当中；等到通知之后，再继续运行。<br>####很多语言里面，同步锁都由专门的对象表示，对象名通常叫Monitor。<br>####同样，在很多语言中，信号量通常也有专门的对象名来表示，比如，Mutex，Semphore。<br>####信号量模型要比同步锁模型复杂许多。一些系统中，信号量甚至可以跨进程进行同步。另外一些信号量甚至还有计数功能，能够控制同时运行的线程数。<br>####我们没有必要考虑那么复杂的模型。所有那些复杂的模型，都是最基本的模型衍生出来的。只要掌握了最基本的信号量模型——“等待/通知”模型，复杂模型也就迎刃而解了。<br>####我们还是以Java语言为例。Java语言里面的同步锁和信号量概念都非常模糊，没有专门的对象名词来表示同步锁和信号量，只有两个同步锁相关的关键字——volatile和synchronized。<br>####这种模糊虽然导致概念不清，但同时也避免了Monitor、Mutex、Semphore等名词带来的种种误解。我们不必执着于名词之争，可以专注于理解实际的运行原理。<br>####在Java语言里面，任何一个Object Reference都可以作为同步锁。同样的道理，任何一个Object Reference也可以作为信号量。<br>####Object对象的wait()方法就是等待通知，Object对象的notify()方法就是发出通知。<br>####具体调用方法为<br>####（1）等待某个信号量的通知 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public static final Object signal = new Object();</span><br><span class="line"></span><br><span class="line">… f1() &#123; </span><br><span class="line">synchronized(singal) &#123; // 首先我们要获取这个信号量。这个信号量同时也是一个同步锁</span><br><span class="line"></span><br><span class="line">// 只有成功获取了signal这个信号量兼同步锁之后，我们才可能进入这段代码 </span><br><span class="line">signal.wait(); // 这里要放弃信号量。本线程要进入signal信号量的待召（Waiting）队列</span><br><span class="line"></span><br><span class="line">// 可怜。辛辛苦苦争取到手的信号量，就这么被放弃了</span><br><span class="line"></span><br><span class="line">// 等到通知之后，从待召（Waiting）队列转到就绪（Ready）队列里面 </span><br><span class="line">// 转到了就绪队列中，离CPU核心近了一步，就有机会继续执行下面的代码了。 </span><br><span class="line">// 仍然需要把signal同步锁竞争到手，才能够真正继续执行下面的代码。命苦啊。 </span><br><span class="line">… </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####需要注意的是，上述代码中的signal.wait()的意思。signal.wait()很容易导致误解。signal.wait()的意思并不是说，signal开始wait，而是说，运行这段代码的当前线程开始wait这个signal对象，即进入signal对象的待召（Waiting）队列。</p>
+<p>####（2）发出某个信号量的通知 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">… f2() &#123; </span><br><span class="line">synchronized(singal) &#123; // 首先，我们同样要获取这个信号量。同时也是一个同步锁。</span><br><span class="line"></span><br><span class="line">// 只有成功获取了signal这个信号量兼同步锁之后，我们才可能进入这段代码 </span><br><span class="line">signal.notify(); // 这里，我们通知signal的待召队列中的某个线程。</span><br><span class="line"></span><br><span class="line">// 如果某个线程等到了这个通知，那个线程就会转到就绪队列中 </span><br><span class="line">// 但是本线程仍然继续拥有signal这个同步锁，本线程仍然继续执行 </span><br><span class="line">// 嘿嘿，虽然本线程好心通知其他线程， </span><br><span class="line">// 但是，本线程可没有那么高风亮节，放弃到手的同步锁 </span><br><span class="line">// 本线程继续执行下面的代码 </span><br><span class="line">… </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>####需要注意的是，signal.notify()的意思。signal.notify()并不是通知signal这个对象本身。而是通知正在等待signal信号量的其他线程。</p>
+<p>####以上就是Object的wait()和notify()的基本用法。<br>####实际上，wait()还可以定义等待时间，当线程在某信号量的待召队列中，等到足够长的时间，就会等无可等，无需再等，自己就从待召队列转移到就绪队列中了。<br>另外，还有一个notifyAll()方法，表示通知待召队列里面的所有线程。<br>这些细节问题，并不对大局产生影响。</p>
 
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/19/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/10/27/%E7%BB%93%E6%9E%84%E4%BD%93%E4%B8%AD%E7%9A%84sizeof/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">结构体中的sizeof()</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -225,9 +322,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
