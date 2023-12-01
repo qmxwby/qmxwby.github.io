@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>hexo写博客基本方法</title>
+    <link href="/2023/12/01/hexo/ues_hexo/"/>
+    <url>/2023/12/01/hexo/ues_hexo/</url>
+    
+    <content type="html"><![CDATA[<h3 id="1-认识hexo的模板"><a href="#1-认识hexo的模板" class="headerlink" title="1. 认识hexo的模板"></a>1. 认识hexo的模板</h3><p>hexo的模板文件指的是scafolds目录中的draft.md、page.md和post.md这三个文件。这些模板的作用主要是在创建新文件的时候可以指定不同的模板生成文件的<strong>Front-matter</strong> 。</p><span id="more"></span><p>这里又涉及到一个知识点，什么是<strong>Front-matter</strong>其实就是每个博客的头信息，即标题、标签、分类、时间等信息。所以hexo的模板就是方便在创建一个新的文件时，自动生成上述信息。其中post和draft是为了生成新的博客文件，创建出来的是一个md文件。page是为了生成新的博客页面，创建出来的是一个文件夹。</p><h3 id="2-如何新建博客以及整理本地文件夹"><a href="#2-如何新建博客以及整理本地文件夹" class="headerlink" title="2. 如何新建博客以及整理本地文件夹"></a>2. 如何新建博客以及整理本地文件夹</h3><p>使用hexo命令新建的博客会自动创建在<strong>source</strong>文件夹下，在source文件夹下有两个文件夹，_post和_drafts分别对应使用post模板和drafts模板创建的文件。使用page模板创建的页面会在此生成同名的文件夹。<br>新建博客使用如下命令：</p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs haxe">$ hexo <span class="hljs-keyword">new</span> <span class="hljs-type"></span>[layout] &lt;filename&gt;<br>eg:<span class="hljs-type"></span><br>$ hexo <span class="hljs-keyword">new</span> <span class="hljs-type">post</span> <span class="hljs-string">&#x27;first&#x27;</span><br>$ hexo <span class="hljs-keyword">new</span> <span class="hljs-type">draft</span> <span class="hljs-string">&#x27;fist&#x27;</span><br></code></pre></td></tr></table></figure><p>这个命令会分别创建一个first.md文件在_post和_drafts文件夹下。如果命令中没有写[layout]，则默认创建在_post文件夹下。</p><ul><li><p>_post文件夹和_drafts文件夹的区别：<br>在使用hexo g生成静态页面时，只会生成_post文件夹中对应的md文件，_drafts由于是草稿文件夹，所以不会生成对应的预览文件。需要提前使用<code>hexo finsh &lt;filename&gt;</code>把_draft中的文件转移到_post中。</p></li><li><p>如何整理本地文件夹：<br>使用上述命令创建的文件全部都保存在_post的子级目录下，看起来十分杂乱，如何做到在_post下创建不同的文件夹做归纳整理呢。</p><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">$ hexo <span class="hljs-built_in">new</span> <span class="hljs-built_in">post</span> <span class="hljs-string">&#x27;how to learn java&#x27;</span> <span class="hljs-comment">--path java/first</span><br></code></pre></td></tr></table></figure><p>可以使用上述命令在后边指定文件的生成路径，这样就会在指定路径中生成新的文件夹。例如上述例子就是在_post&#x2F;java中生成了first.md，其title为’how to learn java’。</p></li></ul><h3 id="3-换电脑之后如何进行博客迁移"><a href="#3-换电脑之后如何进行博客迁移" class="headerlink" title="3. 换电脑之后如何进行博客迁移"></a>3. 换电脑之后如何进行博客迁移</h3><p>hexo绑定了github之后可以看到github上的文件只有本地文件中的public静态文件夹。那么我们在更换电脑之后所有的markdown文件都将不复存在，之前写的博客记录都没有了。所以我们要养成提前备份的好习惯，可以借助github&#x2F;gitee&#x2F;gitlab对整个hexo文件进行备份，提前上传到github中。我这里采用的是gitee进行备份。<br>首先注册gitee账号，新建仓库。然后在本地hexo文件夹右键git bash进入控制台，<code>git init</code>初始化本地仓库，初始完成之后会看到文件夹中多了一个**.git**文件。<br>之后使用<code>git remote add https:xxxx</code>连接远程仓库，将本地文件push上去即可。<br>push的步骤：</p><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>git add .<br><span class="hljs-variable">$ </span>git commit -m <span class="hljs-string">&#x27;备份博客&#x27;</span><br><span class="hljs-variable">$ </span>git push -u origin master<br></code></pre></td></tr></table></figure><p>注意编写.gitignore文件忽略node_modules文件夹，这个文件夹是保存一些前端依赖文件，文件通常会比较大，可以在迁移到新电脑之后使用<code>npm install</code>直接重新下载依赖。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo, blog</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2023/11/29/hello-world/"/>
     <url>/2023/11/29/hello-world/</url>
