@@ -71,7 +71,11 @@
 
 
   
-<meta name="generator" content="Hexo 7.0.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -224,6 +228,128 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h2 class="index-header">
         
+        <a href="/2023/12/21/java/java%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98unicode%E7%BC%96%E7%A0%81%E5%AD%97%E7%AC%A6/" target="_self">
+          java中如何保存unicode字符
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/21/java/java%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98unicode%E7%BC%96%E7%A0%81%E5%AD%97%E7%AC%A6/" target="_self">
+        <div>
+          什么是Unicode编码 Unicode编码是国际组织制定的旨在容纳全球所有字符的编码方案，在Unicode编码出来之前，各个国家都有自己的不同标准：美国的ASCII、西欧的ISO 8859-1、俄罗斯的KOI-8、中国的GB 18030和BIG-5等。但是标准太多就会产生问题，首先，同一个代码值，可能在不同的编码机制中对应不同的字母；其次，不同的编码标准对应的编码长度可能有所不同。例如有些常用
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-12-21 19:57" pubdate>
+              2023-12-21
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/java/" class="category-chain-item">java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/java-%E7%BC%96%E7%A0%81-unicode/">#java 编码 unicode</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
+        <a href="/2023/12/12/leetcode/0004/" target="_self">
+          0004有序列表中的中位数
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2023/12/12/leetcode/0004/" target="_self">
+        <div>
+          原题目链接：寻找两个正序数组的中位数  1. 暴力解法 O(m+n) 求两个有序列表的中位数，最暴力的解法就是将两个有序列表合并，根据列表长度即可得到中位数下标，根据奇偶长度求得中位数即可。 这一步看起来简单，却也是归并排序中的重要步骤，只要了解归并排序，实现起来并不难，注意题目中可能存在空列表，在开始时进行特判即可。 12345678910111213141516171819202122232
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2023-12-12 19:43" pubdate>
+              2023-12-12
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/leetcode-algorithm/">#leetcode algorithm</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h2 class="index-header">
+        
         <a href="/2023/12/06/leetcode/0001%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" target="_self">
           0001两数之和
         </a>
@@ -232,7 +358,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/12/06/leetcode/0001%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" target="_self">
         <div>
-          原题目连接：两数之和1. 最暴力的解法 O($n^2$)看题目的数据范围为$10^4$的级别，O($n^2$)的暴力解法差不多刚好够用。因此直接双重for循环遍历数据，使用标记及时退出循环即可通过样例。 12345678910111213141516171819class Solution &#123;    public int[] twoSum(int[] nums, int target)
+          原题目连接：两数之和  1. 最暴力的解法  看题目的数据范围为的级别，的暴力解法差不多刚好够用。因此直接双重for循环遍历数据，使用标记及时退出循环即可通过样例。 12345678910111213141516171819class Solution &#123;    public int[] twoSum(int[] nums, int target) &#123;        int
         </div>
       </a>
 
@@ -271,7 +397,7 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/leetcode-algorithm/">#leetcode, algorithm</a>
+              <a href="/tags/leetcode-algorithm/">#leetcode algorithm</a>
             
           </div>
         
@@ -293,7 +419,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/12/01/hexo/ues_hexo/" target="_self">
         <div>
-          1. 认识hexo的模板hexo的模板文件指的是scafolds目录中的draft.md、page.md和post.md这三个文件。这些模板的作用主要是在创建新文件的时候可以指定不同的模板生成文件的Front-matter 。
+          1. 认识hexo的模板 hexo的模板文件指的是scafolds目录中的draft.md、page.md和post.md这三个文件。这些模板的作用主要是在创建新文件的时候可以指定不同的模板生成文件的Front-matter 。
         </div>
       </a>
 
@@ -354,7 +480,7 @@
       
       <a class="index-excerpt index-excerpt__noimg" href="/2023/11/29/hello-world/" target="_self">
         <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.  Quic
         </div>
       </a>
 

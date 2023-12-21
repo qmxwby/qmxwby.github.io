@@ -16,19 +16,22 @@
   <meta name="author" content="spruce">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://example.com/about/index.html">
+    <meta name="description" content="什么是Unicode编码 Unicode编码是国际组织制定的旨在容纳全球所有字符的编码方案，在Unicode编码出来之前，各个国家都有自己的不同标准：美国的ASCII、西欧的ISO 8859-1、俄罗斯的KOI-8、中国的GB 18030和BIG-5等。但是标准太多就会产生问题，首先，同一个代码值，可能在不同的编码机制中对应不同的字母；其次，不同的编码标准对应的编码长度可能有所不同。例如有些常用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java中如何保存unicode字符">
+<meta property="og:url" content="http://example.com/2023/12/21/java/java%E5%A6%82%E4%BD%95%E4%BF%9D%E5%AD%98unicode%E7%BC%96%E7%A0%81%E5%AD%97%E7%AC%A6/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是Unicode编码 Unicode编码是国际组织制定的旨在容纳全球所有字符的编码方案，在Unicode编码出来之前，各个国家都有自己的不同标准：美国的ASCII、西欧的ISO 8859-1、俄罗斯的KOI-8、中国的GB 18030和BIG-5等。但是标准太多就会产生问题，首先，同一个代码值，可能在不同的编码机制中对应不同的字母；其次，不同的编码标准对应的编码长度可能有所不同。例如有些常用">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-11-29T04:07:37.000Z">
-<meta property="article:modified_time" content="2023-11-29T04:08:12.915Z">
+<meta property="article:published_time" content="2023-12-21T11:57:02.000Z">
+<meta property="article:modified_time" content="2023-12-21T12:39:21.516Z">
 <meta property="article:author" content="spruce">
+<meta property="article:tag" content="java 编码 unicode">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>关于 - Hexo</title>
+  <title>java中如何保存unicode字符 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -92,7 +95,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -198,9 +201,49 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="关于"></span>
+            <span id="subtitle" data-typed-text="java中如何保存unicode字符"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-12-21 19:57" pubdate>
+          2023年12月21日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          11 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -216,75 +259,181 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/img/avatar.png" srcset="/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">Spruce</div>
-    <div class="about-intro">期待所有的努力能有所回报！</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">java中如何保存unicode字符</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h3 id="什么是unicode编码"><a class="markdownIt-Anchor" href="#什么是unicode编码"></a> 什么是Unicode编码</h3>
+<p>Unicode编码是国际组织制定的旨在容纳全球所有字符的编码方案，在Unicode编码出来之前，各个国家都有自己的不同标准：美国的ASCII、西欧的ISO 8859-1、俄罗斯的KOI-8、中国的GB 18030和BIG-5等。但是标准太多就会产生问题，首先，同一个代码值，可能在不同的编码机制中对应不同的字母；其次，不同的编码标准对应的编码长度可能有所不同。例如有些常用的字符采用单字节编码，而另外一些字符则需要两个或多个字节编码。<br />
+Unicode的出现，解决了上述问题，它为世界上的所有字符都分配了一个唯一的数字编号，这个编号范围为 0x000000 ~ 0x10FFFF，有110多万，每个字符对应一个唯一的编号，这个编号表示为16进制，在前面加上U+。例如：&quot;马&quot;的Unicode是U+9A6C。Unicode就相当于是一张表，记录了字符与编号之间的联系。</p>
+<h3 id="如何使用unicode编码表"><a class="markdownIt-Anchor" href="#如何使用unicode编码表"></a> 如何使用Unicode编码表</h3>
+<p>现在国际组织已经做好了Unicode的编码表，那么各个程序中需要用多少个字节来保存字符呢？这个问题需要各个程序设计专家们解决。<br />
+最简单的方式当然是采用定长编码，直接使用32bit的码元，与Unicode中的编码范围一一对应，这便是<strong>UTF-32</strong>编码方案。</p>
+<h3 id="java中采用utf-16的编码方案"><a class="markdownIt-Anchor" href="#java中采用utf-16的编码方案"></a> java中采用UTF-16的编码方案</h3>
+<p>java中使用的是UTF-16的编码方案，即用2字节(16bit)来保存字符，2字节去一一对应Unicode的数字编号显然是不可能。那么java中是如何实现的，首先引入一些概念。</p>
+<ol>
+<li>码点：Unicode中的数字编号，一个数字编号就是一个码点</li>
+<li>代码平面： Unicode中的编号可以分成17个部分，分别是：
+<ul>
+<li>0x000000 ~ 0x00FFFF (经典字符)</li>
+<li>0x010000 ~ 0x01FFFF (辅助字符)</li>
+<li>0x020000 ~ 0x02FFFF (辅助字符)</li>
+<li>…</li>
+<li>0x0F0000 ~ 0x0FFFFF (辅助字符)</li>
+<li>0x100000 ~ 0x10FFFF (辅助字符)</li>
+</ul>
+</li>
+<li>代码单元：代码单元均由4个16进制数构成：U+xxxx。由于UTF-16是变长编码，所以一个码点可能对应一个代码单元，也可能对应两个代码单元</li>
+</ol>
+<p>首先经典的字符平面(0x0000 ~ 0xFFFF)可以由16bit一一对应，但是经典字符中，还有2048个位置(0xD800 ~ 0xDFFF)是空缺的，即什么都没有对应。因此这2048个位置就可以拿出来组合成其他的码点，还剩下多少个码点没法表示：16 * 2^16 = 2^20个码点。2048刚好可以拆分成1024 + 1024，而1024又刚好是2^10，因此这空缺的2048个位置就可以拆开成两部分，使用两个代码单元来组合表示其他的码点。<br />
+具体来说是0xD800 ~ 0xDBFF为第一个代码单元，0xDC00 ~ 0xDFFF为第二个代码单元。</p>
+<p>例如：&quot;🍷&quot;符号在java中就占用两个代码单元，打印上述的length()，得到的结果是2。</p>
+<p>因此：在java中强烈建议不在要程序中使用char类型，除非确实需要处理UTF-16代码单元。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
         
-        
-        
-        <a href=https://douban.com class="
-           hint--bottom hint--rounded"
-           aria-label=豆瓣
-           target="_blank"
-        >
-          <i class="iconfont icon-douban-fill" aria-hidden="true"></i>
-          
-        </a>
+  <a href="/categories/java/" class="category-chain-item">java</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/img/favicon.png" srcset="/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
+        <a href="/tags/java-%E7%BC%96%E7%A0%81-unicode/" class="print-no-link">#java 编码 unicode</a>
       
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>java中如何保存unicode字符</div>
+      <div>http://example.com/2023/12/21/java/java如何保存unicode编码字符/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>spruce</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年12月21日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/12/12/leetcode/0004/" title="0004有序列表中的中位数">
+                        <span class="hidden-mobile">0004有序列表中的中位数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    
-  </div>
-
-  
-</article>
-
 
 
 
@@ -311,11 +460,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -408,6 +554,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
