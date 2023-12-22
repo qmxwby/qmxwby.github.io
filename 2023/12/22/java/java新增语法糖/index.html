@@ -24,7 +24,7 @@
 <meta property="og:description" content="概述本文档主要记录java中出现的一些奇怪的语法糖，奇怪之处在于你可能潜意识中觉得没有这个功能，但实际上他有这个语法。 text block（文本块 java15新增）可以用来直接创建换行文本，或者直接插入一段代码 12345String greeting &#x3D; &quot;&quot;&quot;    &lt;div class&#x3D;&#x27;warning&#x27;&gt;        Be">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-22T07:59:25.000Z">
-<meta property="article:modified_time" content="2023-12-22T08:35:41.626Z">
+<meta property="article:modified_time" content="2023-12-22T08:38:32.414Z">
 <meta property="article:author" content="spruce">
 <meta property="article:tag" content="java 语法糖 jdk">
 <meta name="twitter:card" content="summary_large_image">
@@ -235,7 +235,7 @@
         
         
         
-          14 分钟
+          15 分钟
         
       </span>
     
@@ -289,7 +289,7 @@
 <h3 id="带标签的break"><a href="#带标签的break" class="headerlink" title="带标签的break"></a>带标签的break</h3><p>java中保留了C++中的goto语句，引入了带标签的break，为了方便循环嵌套的情况下，直接跳出所有的循环。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Test</span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> <span class="hljs-number">100</span>, m = <span class="hljs-number">100</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>;<br>        flag_data:<br>        <span class="hljs-keyword">for</span> ( i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">for</span> ( j = <span class="hljs-number">0</span>; j &lt; m; j++) &#123;<br>                <span class="hljs-keyword">if</span> (i + j == <span class="hljs-number">50</span>)&#123;<br>                    <span class="hljs-keyword">break</span> flag_data;<br>                &#125;<br>            &#125;<br>        &#125;<br>        System.out.printf(<span class="hljs-string">&quot;%d, %d&quot;</span>, i, j);<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 输出 0 50</span><br></code></pre></td></tr></table></figure>
 <p>add： break的好朋友continue也同样有类似的功能，不过break是跳出标记的代码块，continue是跳转到标记的代码块之首。</p>
-
+<h3 id="后续看到会继续新增-2023-12-22记录"><a href="#后续看到会继续新增-2023-12-22记录" class="headerlink" title="后续看到会继续新增 2023-12-22记录"></a>后续看到会继续新增 2023-12-22记录</h3>
                 
               </div>
             
