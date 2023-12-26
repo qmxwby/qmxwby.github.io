@@ -16,22 +16,22 @@
   <meta name="author" content="spruce">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1. 认识hexo的模板hexo的模板文件指的是scafolds目录中的draft.md、page.md和post.md这三个文件。这些模板的作用主要是在创建新文件的时候可以指定不同的模板生成文件的Front-matter 。这里又涉及到一个知识点，什么是Front-matter其实就是每个博客的头信息，即标题、标签、分类、时间等信息。所以hexo的模板就是方便在创建一个新的文件时，自动生成上述信">
+    <meta name="description" content="原题目链接盛最多水的容器1. 暴力解法思路：题目要求我们选择两个竖线当做墙，那么我们可以把所有挑选两个墙的情况全列出来，采用双重for循环的方式即可。 123456789101112class Solution &#123;    public int maxArea(int[] height) &#123;        int len &#x3D; height.length;        int m">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo写博客基本方法">
-<meta property="og:url" content="http://example.com/2023/12/01/hexo/ues_hexo/index.html">
+<meta property="og:title" content="盛最多水的容器">
+<meta property="og:url" content="http://example.com/2023/12/26/leetcode/0011/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1. 认识hexo的模板hexo的模板文件指的是scafolds目录中的draft.md、page.md和post.md这三个文件。这些模板的作用主要是在创建新文件的时候可以指定不同的模板生成文件的Front-matter 。这里又涉及到一个知识点，什么是Front-matter其实就是每个博客的头信息，即标题、标签、分类、时间等信息。所以hexo的模板就是方便在创建一个新的文件时，自动生成上述信">
+<meta property="og:description" content="原题目链接盛最多水的容器1. 暴力解法思路：题目要求我们选择两个竖线当做墙，那么我们可以把所有挑选两个墙的情况全列出来，采用双重for循环的方式即可。 123456789101112class Solution &#123;    public int maxArea(int[] height) &#123;        int len &#x3D; height.length;        int m">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-12-01T06:57:01.000Z">
-<meta property="article:modified_time" content="2023-12-22T08:56:10.284Z">
+<meta property="article:published_time" content="2023-12-26T05:27:37.000Z">
+<meta property="article:modified_time" content="2023-12-26T07:02:18.090Z">
 <meta property="article:author" content="spruce">
-<meta property="article:tag" content="hexo blog">
+<meta property="article:tag" content="leetcode 双指针">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>hexo写博客基本方法 - Hexo</title>
+  <title>盛最多水的容器 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo写博客基本方法"></span>
+            <span id="subtitle" data-typed-text="盛最多水的容器"></span>
           
         </div>
 
@@ -212,8 +212,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-01 14:57" pubdate>
-          2023年12月1日 下午
+        <time datetime="2023-12-26 13:27" pubdate>
+          2023年12月26日 下午
         </time>
       </span>
     
@@ -224,7 +224,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          937 字
         
       </span>
     
@@ -235,7 +235,7 @@
         
         
         
-          13 分钟
+          8 分钟
         
       </span>
     
@@ -272,26 +272,17 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">hexo写博客基本方法</h1>
+            <h1 id="seo-header">盛最多水的容器</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="1-认识hexo的模板"><a href="#1-认识hexo的模板" class="headerlink" title="1. 认识hexo的模板"></a>1. 认识hexo的模板</h3><p>hexo的模板文件指的是scafolds目录中的draft.md、page.md和post.md这三个文件。这些模板的作用主要是在创建新文件的时候可以指定不同的模板生成文件的<strong>Front-matter</strong> 。<br>这里又涉及到一个知识点，什么是<strong>Front-matter</strong>其实就是每个博客的头信息，即标题、标签、分类、时间等信息。所以hexo的模板就是方便在创建一个新的文件时，自动生成上述信息。其中post和draft是为了生成新的博客文件，创建出来的是一个md文件。page是为了生成新的博客页面，创建出来的是一个文件夹。</p>
-<h3 id="2-如何新建博客以及整理本地文件夹"><a href="#2-如何新建博客以及整理本地文件夹" class="headerlink" title="2. 如何新建博客以及整理本地文件夹"></a>2. 如何新建博客以及整理本地文件夹</h3><p>使用hexo命令新建的博客会自动创建在<strong>source</strong>文件夹下，在source文件夹下有两个文件夹，_post和_drafts分别对应使用post模板和drafts模板创建的文件。使用page模板创建的页面会在此生成同名的文件夹。<br>新建博客使用如下命令：</p>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs haxe">$ hexo <span class="hljs-keyword">new</span> <span class="hljs-type"></span>[layout] &lt;filename&gt;<br>eg:<span class="hljs-type"></span><br>$ hexo <span class="hljs-keyword">new</span> <span class="hljs-type">post</span> <span class="hljs-string">&#x27;first&#x27;</span><br>$ hexo <span class="hljs-keyword">new</span> <span class="hljs-type">draft</span> <span class="hljs-string">&#x27;fist&#x27;</span><br></code></pre></td></tr></table></figure>
-<p>这个命令会分别创建一个first.md文件在_post和_drafts文件夹下。如果命令中没有写[layout]，则默认创建在_post文件夹下。</p>
-<ul>
-<li><p>_post文件夹和_drafts文件夹的区别：<br>在使用hexo g生成静态页面时，只会生成_post文件夹中对应的md文件，_drafts由于是草稿文件夹，所以不会生成对应的预览文件。需要提前使用<code>hexo finsh &lt;filename&gt;</code>把_draft中的文件转移到_post中。</p>
-</li>
-<li><p>如何整理本地文件夹：<br>使用上述命令创建的文件全部都保存在_post的子级目录下，看起来十分杂乱，如何做到在_post下创建不同的文件夹做归纳整理呢。</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs livecodeserver">$ hexo <span class="hljs-built_in">new</span> <span class="hljs-built_in">post</span> <span class="hljs-string">&#x27;how to learn java&#x27;</span> <span class="hljs-comment">--path java/first</span><br></code></pre></td></tr></table></figure>
-<p>可以使用上述命令在后边指定文件的生成路径，这样就会在指定路径中生成新的文件夹。例如上述例子就是在_post&#x2F;java中生成了first.md，其title为’how to learn java’。</p>
-</li>
-</ul>
-<h3 id="3-换电脑之后如何进行博客迁移"><a href="#3-换电脑之后如何进行博客迁移" class="headerlink" title="3. 换电脑之后如何进行博客迁移"></a>3. 换电脑之后如何进行博客迁移</h3><p>hexo绑定了github之后可以看到github上的文件只有本地文件中的public静态文件夹。那么我们在更换电脑之后所有的markdown文件都将不复存在，之前写的博客记录都没有了。所以我们要养成提前备份的好习惯，可以借助github&#x2F;gitee&#x2F;gitlab对整个hexo文件进行备份，提前上传到github中。我这里采用的是gitee进行备份。<br>首先注册gitee账号，新建仓库。然后在本地hexo文件夹右键git bash进入控制台，<code>git init</code>初始化本地仓库，初始完成之后会看到文件夹中多了一个**.git**文件。<br>之后使用<code>git remote add https:xxxx</code>连接远程仓库，将本地文件push上去即可。<br>push的步骤：</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>git add .<br><span class="hljs-variable">$ </span>git commit -m <span class="hljs-string">&#x27;备份博客&#x27;</span><br><span class="hljs-variable">$ </span>git push -u origin master<br></code></pre></td></tr></table></figure>
-<p>注意编写.gitignore文件忽略node_modules文件夹，这个文件夹是保存一些前端依赖文件，文件通常会比较大，可以在迁移到新电脑之后使用<code>npm install</code>直接重新下载依赖。</p>
+                <h3 id="原题目链接盛最多水的容器"><a href="#原题目链接盛最多水的容器" class="headerlink" title="原题目链接盛最多水的容器"></a>原题目链接<a target="_blank" rel="noopener" href="https://leetcode.com/problems/container-with-most-water/">盛最多水的容器</a></h3><h3 id="1-暴力解法"><a href="#1-暴力解法" class="headerlink" title="1. 暴力解法"></a>1. 暴力解法<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewBox="0 -833.9 2577.6 1083.9" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-I-1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path><path id="MJX-1-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-1-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-1-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-1-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D442" xlink:href="#MJX-1-TEX-I-1D442"></use></g><g data-mml-node="mo" transform="translate(763,0)"><use data-c="28" xlink:href="#MJX-1-TEX-N-28"></use></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><use data-c="1D45B" xlink:href="#MJX-1-TEX-I-1D45B"></use></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><use data-c="32" xlink:href="#MJX-1-TEX-N-32"></use></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><use data-c="29" xlink:href="#MJX-1-TEX-N-29"></use></g></g></g></svg></mjx-container></h3><p>思路：题目要求我们选择两个竖线当做墙，那么我们可以把所有挑选两个墙的情况全列出来，采用双重for循环的方式<br>即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxArea</span><span class="hljs-params">(<span class="hljs-type">int</span>[] height)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> height.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">maxContain</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; len; i++) &#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> i+<span class="hljs-number">1</span>; j &lt; len; j++) &#123;<br>                maxContain = Math.max(maxContain, Math.min(height[i], height[j]) * (j - i));<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> maxContain;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>当然，题目的数据量为<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="3.25ex" height="2.005ex" role="img" focusable="false" viewBox="0 -864 1436.6 886" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-1-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-1-TEX-N-30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJX-1-TEX-N-35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msup"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-1-TEX-N-31"></use><use data-c="30" xlink:href="#MJX-1-TEX-N-30" transform="translate(500,0)"></use></g><g data-mml-node="mn" transform="translate(1033,393.1) scale(0.707)"><use data-c="35" xlink:href="#MJX-1-TEX-N-35"></use></g></g></g></g></svg></mjx-container>,因此采用这种方式会使得某些样例因为超时而无法通过。</p>
+<h3 id="2-双指针-O-n"><a href="#2-双指针-O-n" class="headerlink" title="2. 双指针 O(n)"></a>2. 双指针 O(n)</h3><p>思路：我们可知道影响盛水的多少的因素有两个，一个是容器的宽，一个是容器的高。那么如果我们依次减少容器的宽，<br>当且仅当容器的高增加，容器才可能盛更多的水。因此我们设置两个指针，一个指向最左端，一个指向最右端。每次移动<br>小数值指针向大数值指针靠拢即可。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxArea</span><span class="hljs-params">(<span class="hljs-type">int</span>[] height)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> height.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> len - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">maxContain</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(left &lt; right) &#123;<br>            maxContain = Math.max(Math.abs(height[left] - height[right]) * (right - left), maxContain);<br>            <span class="hljs-keyword">if</span> (height[left] &lt; height[right]) &#123;<br>                left++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                right--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> maxContain;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样一来，只需要遍历一遍数组即可找到最大的盛水容器，因此时间复杂度为O(n),没有使用额外的空间，因此空间复杂度为O(n)</p>
 
                 
               </div>
@@ -310,7 +301,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/hexo/" class="category-chain-item">hexo</a>
+  <a href="/categories/leetcode/" class="category-chain-item">leetcode</a>
   
   
 
@@ -325,7 +316,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo-blog/" class="print-no-link">#hexo blog</a>
+        <a href="/tags/leetcode-%E5%8F%8C%E6%8C%87%E9%92%88/" class="print-no-link">#leetcode 双指针</a>
       
     </div>
   
@@ -337,8 +328,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo写博客基本方法</div>
-      <div>http://example.com/2023/12/01/hexo/ues_hexo/</div>
+      <div>盛最多水的容器</div>
+      <div>http://example.com/2023/12/26/leetcode/0011/</div>
     </div>
     <div class="license-meta">
       
@@ -350,7 +341,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年12月1日</div>
+          <div>2023年12月26日</div>
         </div>
       
       
@@ -382,18 +373,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/06/leetcode/0001%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" title="0001两数之和">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">0001两数之和</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/29/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/12/22/java/java%E6%96%B0%E5%A2%9E%E8%AF%AD%E6%B3%95%E7%B3%96/" title="java新增语法糖">
+                        <span class="hidden-mobile">java新增语法糖</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
