@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>0026删除有序数组中的重复项</title>
+    <link href="/2023/12/27/leetcode/0026/"/>
+    <url>/2023/12/27/leetcode/0026/</url>
+    
+    <content type="html"><![CDATA[<h3 id="原题连接：删除有序数组中的重复项"><a href="#原题连接：删除有序数组中的重复项" class="headerlink" title="原题连接：删除有序数组中的重复项"></a>原题连接：<a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/description/">删除有序数组中的重复项</a></h3><h3 id="1-最直接的思路，开辟额外空间"><a href="#1-最直接的思路，开辟额外空间" class="headerlink" title="1. 最直接的思路，开辟额外空间"></a>1. 最直接的思路，开辟额外空间</h3><p>思路：直接新建一个额外的数组，把所有不相等的数放进去，最后再以此覆盖原数组中的值即可。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-type">var</span> <span class="hljs-variable">arr</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;Integer&gt;(n);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span>(n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        arr.add(nums[<span class="hljs-number">0</span>]);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span>(nums[i] != nums[i-<span class="hljs-number">1</span>])&#123;<br>                arr.add(nums[i]);<br>                res++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> item:arr)<br>            nums[i++] = item;<br>        <span class="hljs-keyword">return</span> res;       <br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>分析：时间复杂度，一个for循环O(n)，空间上使用了一个新的数组，空间复杂度为O(n)</p><h3 id="2-优化，不使用额外的空间"><a href="#2-优化，不使用额外的空间" class="headerlink" title="2. 优化，不使用额外的空间"></a>2. 优化，不使用额外的空间</h3><p>思路：要想覆盖原来的数组同时不影响之后的遍历，可以定义两个指针，一个指针把不重复项依次填充在最前面(记为慢指针)，一个指针用来寻找所有的不重复项(记为快指针)。快指针一定是大于等于慢指针的，这样慢指针修改的值也不影响快指针后边的遍历结果。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-comment">// 不使用额外的空间</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">removeDuplicates</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;    <span class="hljs-comment">// 慢指针</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; n; i++)&#123;<br>            <span class="hljs-comment">// 这里的i即为快指针，一直向后遍历</span><br>            <span class="hljs-keyword">if</span>(nums[i] != nums[i-<span class="hljs-number">1</span>])<br>                nums[res++] = nums[i];<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>分析：时间上，使用了一个for循环，最慢的情况是遍历两边数组，时间复杂度为O(n)。空间上没有使用额外的开销，因此空间复杂度为O(1)。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>双指针</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>最接近的三数之和</title>
     <link href="/2023/12/27/leetcode/0016/"/>
     <url>/2023/12/27/leetcode/0016/</url>
