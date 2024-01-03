@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>搜索旋转排序数组</title>
+    <link href="/2024/01/03/leetcode/0033/"/>
+    <url>/2024/01/03/leetcode/0033/</url>
+    
+    <content type="html"><![CDATA[<h3 id="原题连接：-搜索旋转排序数组"><a href="#原题连接：-搜索旋转排序数组" class="headerlink" title="原题连接： 搜索旋转排序数组"></a>原题连接： <a href="https://leetcode.cn/problems/search-in-rotated-sorted-array/description/">搜索旋转排序数组</a></h3><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>理解题目意思，题目中给定的数组是从某个地方开始旋转的有序数组，但是这个地方有可能是0号位置，也就是没有旋转，因此数组的形状有如下两种：      </p><div style="height: 400px"><img src='/images/33-01.png' width='46%' align=left><img src='/images/33-02.png' width='46%' align=right>  </div>  当为左边这种的情况时，我们就可以直接使用二分法寻找target。如果是右边这种情况，那么我们可以先找到旋转点，然后判断target在左边还是右边，在使用二分法寻找。  那么思路就很明确了，第一步先判断是哪一种旋转的情况，如何判断，直接比较a[0]和a[n-1]的大小即可，在其他位置旋转的数组，最前面的数一定大于最后边的数。找到之后我们再去寻找旋转点，可以采用二分的方式寻找，这里的二分代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 首先找到断开的地方</span><br><span class="hljs-keyword">while</span>(left &lt; right)&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> (left + right)/<span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">if</span> (nums[mid] &lt; nums[right]) right = mid;<br>    <span class="hljs-keyword">else</span> left = mid + <span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>这里寻找的是旋转点，找到之后和target比较一下即可确定target在哪一个有序区间，接下来继续使用二分可轻松找到target。<br>整体代码如下：  </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Arrays;<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">search</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">if</span>(n == <span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">if</span>(nums[<span class="hljs-number">0</span>] == target) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span>(nums[left] &gt; nums[right]) &#123;<br>            <span class="hljs-comment">// 说明是在其他位置经过旋转的</span><br>            <span class="hljs-comment">// 首先找到断开的地方</span><br>            <span class="hljs-keyword">while</span>(left &lt; right)&#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> (left + right)/<span class="hljs-number">2</span>;<br>                <span class="hljs-keyword">if</span> (nums[mid] &lt; nums[right]) right = mid;<br>                <span class="hljs-keyword">else</span> left = mid + <span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(target &lt;= nums[n-<span class="hljs-number">1</span>])&#123;<br>                res =  Arrays.binarySearch(nums, left, n, target);<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                res = Arrays.binarySearch(nums, <span class="hljs-number">0</span>, right, target);<br>            &#125;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 说明是升序数组</span><br>            res =  Arrays.binarySearch(nums, target);<br>        &#125;<br>        <span class="hljs-keyword">if</span>(res &lt;= -<span class="hljs-number">1</span>)&#123;<br>            res = -<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><img src="/images/33-03.png" alt="提交结果"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>leetcode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>双指针</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>0026删除有序数组中的重复项</title>
     <link href="/2023/12/27/leetcode/0026/"/>
     <url>/2023/12/27/leetcode/0026/</url>
